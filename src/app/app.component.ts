@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,20 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'FirstFormWork';
+  suggestUserName() {
+    const suggestedName = 'Superuser';
+  }
+  //THIS IS USING THE FORM METHOD
+  onSubmit(form:NgForm){
+    console.log(form);
+   //console.error("no info");
+    
+  }
+  //THIS IS USING THE VIEWCHILD
+  //onSubmit(){
+    ///console.log(this.signupForm);
+    
+ // }
+
+    
 }
