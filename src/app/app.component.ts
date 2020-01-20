@@ -13,6 +13,15 @@ export class AppComponent {
   answer = "";
   genders = ['male', 'female'];
   setGender = "male"
+  submitInfo= {
+    userName: "",
+    email: "",
+    secret: "",
+    QAnswer: "",
+    gender: ""
+
+  }
+  submitted = false;
   title = 'FirstFormWork';
   suggestUserName() {
     const suggestedName = 'Daniel';
@@ -41,6 +50,12 @@ export class AppComponent {
   onSubmit(form:NgForm){
     console.log(form);
    //console.error("no info");
+this.submitted = true;
+   this.submitInfo.userName = this.signupForm.value.userData.username;
+   this.submitInfo.email = this.signupForm.value.userData.email;
+   this.submitInfo.QAnswer = this.signupForm.value.questionAnswer;
+   this.submitInfo.secret = this.signupForm.value.secret;
+   this.submitInfo.gender = this.signupForm.value.gender;
     
   }
   //THIS IS USING THE VIEWCHILD
