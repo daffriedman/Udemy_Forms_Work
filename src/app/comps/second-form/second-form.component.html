@@ -1,0 +1,74 @@
+<p>second-form works!</p>
+<div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+        <!-- Add a Form with the following Inputs (and Validators)
+             1) Mail address (should not be empty and should be an email address)
+             2) A Dropdown which allows the user to select from three different Subscriptions ("Basic", "Advanced", "Pro")
+                Set "Advanced" as Default
+             3) A Password field (should not be empty)
+             4) A Submit Button
+  
+             Display a warning message if the Form is invalid AND was touched. Display a warning message below each input if it's invalid.
+  
+             Upon submitting the form, you should simply print the Value of the Form to the Console.
+             Optionally, display it in your template.
+        -->
+        <form (ngSubmit)= " submitSecondForm(secondForm)" #secondForm = "ngForm">
+            <div id="userinput"
+            ngModelGroup="data"
+                    #data = "ngModelGroup">
+                    <label for="emailform2"
+                    >Email</label> 
+                    <input type=email
+                    id="emailform2"
+                    
+                    class="form-control"
+                    [ngModel] = "setEmail"
+                    name="emailform2"
+                    required
+                    email
+                    #email = "ngModel">
+                    <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid email for emailform2</span> 
+                </div>
+                <div class="form-group">
+                    <label for= "Subscriptions">Choose from A preadded subscription</label>
+                    <select id="Subscription"
+                     class="form-control"
+                     [ngModel] = "subscription"
+                     name="subscription">
+                        <option value="Advanced">Advanced</option>
+                        <option value="Basic">Basic</option>
+                        <option value="Pro">Pro</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="password">This is your Password
+
+                    </label>
+                    <input type="password"
+                    id="password"
+                    class="form-control"
+                    [ngModel] = "setPassword"
+                    name="password"
+                    required
+                    >
+                </div>
+                <div>
+                    <button class="btn btn-primary"
+                    type="submit"
+                    [disabled] = "!secondForm.valid"
+                    >Submit</button>
+                </div>
+
+        </form>
+        <hr>
+        <div>
+            <h3>Your SecondForm Data</h3>
+                <p>Email: {{forFillForm.email}}</p>
+                <p>Subscription: {{forFillForm.subscription}}</p>
+                <p>Password: {{forFillForm.password}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
