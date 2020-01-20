@@ -56,6 +56,7 @@ this.submitted = true;
    this.submitInfo.QAnswer = this.signupForm.value.questionAnswer;
    this.submitInfo.secret = this.signupForm.value.secret;
    this.submitInfo.gender = this.signupForm.value.gender;
+   this.signupForm.reset();
     
   }
   //THIS IS USING THE VIEWCHILD
