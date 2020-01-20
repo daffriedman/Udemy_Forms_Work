@@ -10,6 +10,8 @@ export class AppComponent {
   //secretQuestion ="pet";
   secretQuestion ="teacher";
   answer = "";
+  genders = ['male', 'female'];
+  setGender = "male"
   title = 'FirstFormWork';
   suggestUserName() {
     const suggestedName = 'Superuser';
